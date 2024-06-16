@@ -42,7 +42,7 @@ main().then(()=> console.log('MongoDB connected...'))
 
 async function main(){
     await mongoose.connect(dbUrl);
-}
+};
 
 
 const store = MongoStore.connect({
