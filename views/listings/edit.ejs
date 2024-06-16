@@ -1,0 +1,43 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <div class="row">
+    <div class="col-8 offset-2"><br> <!--offset-2 is used to center the form-->
+    <h2>Edit Listing</h2>
+    <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" value="<%=listing.title%>" class="form-control" required> <!--required likha taaki hamesha entry fill rhe-->
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label><br>
+            <textarea type="text" class="form-control" name="listing[description]" rows="10" cols="20" required><%=listing.description%></textarea>
+        </div>
+
+        <div class="mb-3">
+            <p>Original Image:</p>
+            <img src="<%=newImg%>" alt="listing image" style="width: 200px; height: 200px;">
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload New Image</label>
+            <input type="file" class="form-control" name="listing[image]">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" name="listing[price]" value="<%=listing.price%>" required>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" name="listing[location]" value="<%=listing.location%>" required>
+        </div>
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control" name="listing[country]" value="<%=listing.country%>" required>
+        </div>
+        <br>
+        <button class="btn btn-dark" style="background-color: #fe424d; border: none;">Update</button><br><br><br>
+    </form>
+</div>
+</div>
+</body>

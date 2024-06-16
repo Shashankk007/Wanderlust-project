@@ -1,0 +1,145 @@
+body {
+    background-color: aliceblue;
+    font-family: "Signika", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/*to stick footer at the bottom of the page */
+.container {
+    flex    : 1; 
+}
+
+.navbar {
+    height : 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color : #fe424d;
+    font-size:2rem;
+}
+
+.nav-link {
+    color :#222222 !important
+}
+
+/* Footer */
+.f-info-links a{
+    color : #222222;
+    text-decoration: none;
+}
+.f-info-links a:hover{
+    color : #222222;
+    text-decoration: underline;
+}
+
+.f-info{
+    text-align: center;
+    background-color: #ebebeb;
+    display: flex;
+    justify-content: center;
+    height : 8rem;
+    flex-wrap: wrap;
+    align-items: space-evenly;
+    
+}
+
+.f-info-links,.f-info-social{
+    width: 100%;
+}
+
+
+.f-info-social i{
+    margin: 0 0.5rem;
+    font-size: 1.3rem;
+    margin-top: 0.7rem;
+}
+
+/* cards */
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+.card:hover {
+    box-shadow: 0 0 2rem 0 rgba(25, 7, 7, 0.1);
+}
+
+.show-page-img {
+    height: 50vh;
+    object-fit: cover;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+}
+
+.listing-link {
+    color: #222222;
+    text-decoration: none;
+}
+/* .navbar {
+    margin-bottom: 2rem !important;
+} */
+
+/* show page btn */
+
+.btns {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem;
+    
+}
+
+/* .checked {
+    color : orange;
+} */
+
+.review-cards {
+    margin : 2rem;
+}
+
+/* filter bar */
+
+.filters {
+    display: flex;
+    justify-content:space-evenly;
+    margin: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.filter {
+    margin-right : 1rem;
+    opacity: 0.8;
+    
+}
+
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.filter div{
+    text-align: center;
+}
+.filter p{
+    font-size: 0.8rem;
+}
+
+.tax-info {
+    display: none;
+}
+
+.tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 1rem ;
+}

@@ -1,0 +1,83 @@
+<% layout('/layouts/boilerplate') %> <!-- This line is used to include the boilerplate layout file -->
+
+       
+        <!-- <form method="GET" action="/listings/new">
+        <button>Create New Listing</button>
+    </form> -->
+        
+        
+        <div class="filters">
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain-city"></i></div>
+                <p>Iconic Cities</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain"></i></div>
+                <p>Mountains</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castles</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Amazing Pools</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Camping</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-cow"></i></div>
+                <p>Farms</p>
+            </div>
+
+            <div class="tax-toggle">
+                <div class="form-check-reverse form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" role="switch">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>    
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+            <%for(listing of allListing){%>
+                <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="card mb-3" >
+                    <img src="<%=listing.image.url%>" class="card-img-top" alt="<%=listing.title%>" style="height: 20rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <b><%=listing.title%></b>
+                        </h5>
+                        <p class="card-text" style="display: inline;">&#8377;<%=listing.price.toLocaleString("en-IN")%> /night</p>
+                        <i class="tax-info">&nbsp; &nbsp;+18 GST</i>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+                </a>
+
+            <%}%>
+        </div>
+
+<script>
+    let taxToggle = document.getElementById('flexSwitchCheckDefault');
+    taxToggle.addEventListener("click", ()=>{
+        let taxInfo = document.getElementsByClassName("tax-info");
+        for(info of taxInfo){
+        if(info.style.display != "inline"){
+            info.style.display = "inline";
+        } else {
+            info.style.display = "none";
+        }}
+    })
+</script>
+
+    
